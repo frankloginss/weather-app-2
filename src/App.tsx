@@ -34,7 +34,7 @@ function App() {
   const fetchWeatherData = async () => {
     const data: any = await getFormattedWeatherData(city, units);
     // console.log("data is => ", data);
-    console.log("sky is =>", data?.mainx);
+    // console.log("sky is =>", data?.mainx);
 
     if (data === undefined) {
       setWeather(null);

@@ -14,7 +14,7 @@ const getFormattedWeatherData = async (city?: string, units = "metric") => {
     if (data?.cod === "404" || data?.cod === "400") {
       throw data.message;
     } else {
-      console.log('data => ', data)
+      // console.log('data => ', data)
       const {
         weather,
         main: { temp, feels_like, temp_min, temp_max, pressure, humidity },
@@ -26,7 +26,7 @@ const getFormattedWeatherData = async (city?: string, units = "metric") => {
       const { description, icon } = weather[0];
       const mainx = weather[0].main
 
-      console.log('data.weather[0].main => ', mainx)
+      // console.log('data.weather[0].main => ', mainx)
 
       return {
         description,
