@@ -5,6 +5,7 @@ import clear from "./assets/clear.jpg";
 import Rain from "./assets/rain.jpg";
 import Drizzle from "./assets/drizzle.jpg";
 import Haze from "./assets/haze.jpg";
+import mist from "./assets/mist.jpg";
 import Descriptions from "./components/Descriptions";
 import React, { MouseEvent, SetStateAction, useEffect, useState } from "react";
 import { getFormattedWeatherData } from "./weatherService";
@@ -25,7 +26,7 @@ interface w_data {
 }
 
 function App() {
-  const [city, setCity] = useState("Windhoek");
+  const [city, setCity] = useState("Windhoekx");
   const [weather, setWeather] = useState<w_data | null>(null);
   const [units, setUnits] = useState("metric");
   const [bg, setBg] = useState(hotBg);
@@ -64,6 +65,9 @@ function App() {
         break;
       case "Haze":
         setBg(Haze);
+        break;
+      case "Mist":
+        setBg(mist);
         break;
       default:
         setBg(hotBg);
@@ -145,7 +149,7 @@ function App() {
               <button onClick={(e) => handleUnitsClick(e)}>°F</button>
             </div>
 
-            <div className="section section__temperature">
+            <div className="section section__temperature -mt-10">
               <div className="temperature">
                 <h2>City not found. Please try again.</h2>
               </div>
