@@ -26,7 +26,7 @@ interface w_data {
 }
 
 function App() {
-  const [city, setCity] = useState("Windhoekx");
+  const [city, setCity] = useState("Brussels");
   const [weather, setWeather] = useState<w_data | null>(null);
   const [units, setUnits] = useState("metric");
   const [bg, setBg] = useState(hotBg);
