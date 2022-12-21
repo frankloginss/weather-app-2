@@ -7,7 +7,7 @@ import Drizzle from "./assets/drizzle.jpg";
 import Haze from "./assets/haze.jpg";
 import mist from "./assets/mist.jpg";
 import Descriptions from "./components/Descriptions";
-import React, { MouseEvent, SetStateAction, useEffect, useState } from "react";
+import React, { MouseEvent, useRef, useEffect, useState } from "react";
 import { getFormattedWeatherData } from "./weatherService";
 
 interface w_data {
@@ -30,6 +30,7 @@ function App() {
   const [weather, setWeather] = useState<w_data | null>(null);
   const [units, setUnits] = useState("metric");
   const [bg, setBg] = useState(hotBg);
+
 
   const fetchWeatherData = async () => {
     const data: any = await getFormattedWeatherData(city, units);
@@ -82,7 +83,7 @@ function App() {
 
   useEffect(() => {
     fetchWeatherData();
-  }, []);
+  }, [units]);
 
   const handleUnitsClick = (e: MouseEvent<HTMLButtonElement>): void => {
     const button = e.currentTarget;
